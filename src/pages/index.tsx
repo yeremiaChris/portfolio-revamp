@@ -1,5 +1,6 @@
 import Home from "../components/Home";
 import About from "../components/About";
+import Skills from "../components/Skills";
 
 function Index() {
   return (
@@ -7,6 +8,8 @@ function Index() {
       <Home />
 
       <About />
+
+      <Skills />
     </div>
   );
 }
