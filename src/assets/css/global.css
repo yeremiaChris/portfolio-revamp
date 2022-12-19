@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  @apply bg-[#F3F1EF];
-} */
-
 .btn-primary {
   @apply px-6 py-1 transition transform duration-300 hover:border-0 rounded-full hover:bg-yellow-500 hover:text-white bg-gray-100;
 }

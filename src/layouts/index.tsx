@@ -7,7 +7,7 @@ type TemplateProps = {
 
 function Default({ children }: TemplateProps) {
   return (
-    <div className="m-auto">
+    <div className="m-auto mb-20">
       <Navbar />
 
       <main className="container">{children}</main>

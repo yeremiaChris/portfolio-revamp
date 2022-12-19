@@ -1,8 +1,9 @@
 import React from "react";
+import { logos } from "../constants/home";
 
 function Home() {
   return (
-    <div className="grid grid-cols-2 uppercase mt-14">
+    <div className="grid grid-cols-2 gap-10 uppercase mt-20">
       {/* img banner */}
       <div className="box-center relative">
         <img
@@ -10,16 +11,27 @@ function Home() {
           src="/img/my-picture.png"
           alt="banner"
         />
+
+        {/* skill's logos */}
+        {logos?.map((pElement) => (
+          <div key={pElement.name} className={`absolute ${pElement.class}`}>
+            <img src={`/img/${pElement.name}.png`} className="w-3/4" alt="nuxtjs" />
+          </div>
+        ))}
       </div>
 
       {/* content */}
-      <div className="pt-32 text-3xl font-medium">
-        <h2>
+      <div className="pt-32 text-3xl text-gray-700 tracking-widest ">
+        <h2 className="font-medium">
+          <span className="text-purple-600 font-bold mr-2 animate-bounce inline-block">{"<>"}</span>
           HI, I'M YEREMIA <br /> CHRIS SARAGI.
         </h2>
         <h2 className="mt-5">
           "A FRONTEND WEB DEVELOPER <br />
           Experienced in Javascript and Typescript Technology"
+          <span className="text-purple-600 font-bold ml-2 animate-bounce inline-block">
+            {"</>"}
+          </span>
         </h2>
 
         {/* social media */}
