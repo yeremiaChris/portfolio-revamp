@@ -15,7 +15,7 @@ function Home() {
         {/* skill's logos */}
         {logos?.map((pElement) => (
           <div key={pElement.name} className={`absolute ${pElement.class}`}>
-            <img src={`/img/${pElement.name}.png`} className="w-3/4" alt={pElement.name} />
+            <img src={`/img/${pElement.name}.png`} className="w-1/2" alt={pElement.name} />
           </div>
         ))}
       </div>

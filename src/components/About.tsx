@@ -16,7 +16,7 @@ function About() {
           {boxes?.map((pElement, pIndex) => (
             <div className="hover:-translate-y-2 transform duration-300 py-5 px-7 box-between border rounded-lg shadow-xl cursor-pointer justify-center">
               <div className="flex flex-col gap-3">
-                <h2 className="text-2xl font-medium text-purple-600">{pElement.title}</h2>
+                <h2 className="text-2xl font-medium">{pElement.title}</h2>
                 <Link to={pElement.link} className="inline-block text-green-700 underline">
                   {pElement.linkTitle}
                 </Link>
