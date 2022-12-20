@@ -14,7 +14,7 @@ function About() {
 
         <div className="grid grid-rows-2 gap-5">
           {boxes?.map((pElement, pIndex) => (
-            <div className="hover:-translate-y-2 transform duration-300 py-5 px-7 box-between border rounded-lg shadow-xl cursor-pointer justify-center">
+            <div className="hover:-translate-y-2 bg-white transform duration-300 py-5 px-7 box-between border rounded-lg shadow-xl cursor-pointer justify-center">
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl font-medium">{pElement.title}</h2>
                 <Link to={pElement.link} className="inline-block text-green-700 underline">
