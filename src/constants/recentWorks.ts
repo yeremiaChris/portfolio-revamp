@@ -1,11 +1,10 @@
 export const works = [
   {
-    title:
-      "MAMI (Manulife Asset Manajemen Indonesia) Mutual Funds Site + CMS => NuxtJs and TailwindCss",
+    title: "MAMI (Manulife Asset Manajemen Indonesia) Mutual Funds Site + CMS",
     image: "mami.png",
   },
   {
-    title: "Social Media Scrapping Site => NuxtJs and TailwindCss",
+    title: "Social Media Scrapping Site",
     image: "scrapping.png",
   },
   {
@@ -21,19 +20,19 @@ export const works = [
     image: "kiriminaja.png",
   },
   {
-    title: "Quizz App => Nextjs",
+    title: "Quizz App",
     image: "quizz.png",
   },
   {
-    title: "BPPT Dashboard Site => NuxtJs, CSS",
+    title: "BPPT Dashboard Site",
     image: "bppt.png",
   },
   {
-    title: "Cafe Sales Transaction Application => React Native",
+    title: "Cafe Sales Transaction Application",
     image: "cafe.jpeg",
   },
   {
-    title: "Pharmacy Information System => NuxtJs, TailwindCSS",
+    title: "Pharmacy Information System",
     image: "apotek.png",
   },
 ];
