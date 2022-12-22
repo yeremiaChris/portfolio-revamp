@@ -35,13 +35,13 @@ function Navbar() {
           YERE<span className="text-yellow-500">MIA</span>
         </div>
 
-        <ul className="flex gap-5">
+        <ul className="lg:flex gap-5 hidden">
           <li className="text-purple-600">HOME</li>
           <li className="">ABOUT</li>
           <li className="">WORKS</li>
         </ul>
 
-        <div className="flex gap-3">
+        <div className="hidden lg:flex gap-3">
           <button
             className={`btn-primary hover:bg-purple-500 hover:text-white border border-purple-500 ${
               isDark && "bg-purple-500 text-white "
@@ -57,6 +57,23 @@ function Navbar() {
             LIGHT
           </button>
         </div>
+
+        <button className="lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
   );
