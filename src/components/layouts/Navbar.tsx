@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+const menus = ["home", "about", "skill", "companies", "recentWorks"];
 
 function Navbar() {
   const [isScroll, setIsScroll] = useState<boolean>(false);
@@ -26,20 +29,23 @@ function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 duration-300 ${
-        isScroll && "backdrop-blur shadow-xl font-medium"
-      }`}
+      className={`sticky top-0 z-50 duration-300 text-gray-500 ${isScroll && "bg-white shadow"}`}
     >
       <div className="container box-between py-5">
         <div className="font-bold">
           YERE<span className="text-yellow-500">MIA</span>
         </div>
 
-        <ul className="lg:flex gap-5 hidden">
-          <li className="text-purple-600">HOME</li>
-          <li className="">ABOUT</li>
-          <li className="">WORKS</li>
-        </ul>
+        <div className="lg:flex gap-5 hidden text-sm uppercase font-medium">
+          {menus?.map((sElement) => (
+            <Link
+              to="#"
+              className="hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full text-gray-600"
+            >
+              {sElement}
+            </Link>
+          ))}
+        </div>
 
         <div className="hidden lg:flex gap-3">
           <button

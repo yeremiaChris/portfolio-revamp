@@ -17,6 +17,7 @@ export const works = [
   {
     title: "Dashbourd Purity (Slicing PURITY UI)",
     image: "purity.png",
+    link: "",
   },
   {
     title: "Revamp Kiriminaja.com site",
