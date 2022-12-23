@@ -53,7 +53,9 @@ function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 duration-300 text-gray-500 ${isScroll && "bg-white shadow"}`}
+      className={`sticky top-0 z-50 duration-300 text-gray-500 ${
+        isScroll && "bg-white dark:bg-gray-800 shadow"
+      }`}
     >
       {/* mobile */}
       <MobileNavbar isMobile={isMobile} handleClick={() => setIsMobile(false)} />

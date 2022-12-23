@@ -15,7 +15,7 @@ function Home() {
 
         {/* skill's logos */}
         {logos?.map((pElement) => (
-          <div key={pElement.name} className={`absolute ${pElement.class}`}>
+          <div key={pElement.name} className={`absolute dark:bg-purple-100 ${pElement.class}`}>
             <img
               src={`/img/${pElement.name}.png`}
               className={`${pElement.name === "nuxt" ? "w-1/2" : "w-10"}`}
@@ -26,7 +26,7 @@ function Home() {
       </div>
 
       {/* content */}
-      <div className="lg:pt-32 text-xl lg:text-3xl text-gray-700 tracking-widest ">
+      <div className="lg:pt-32 text-xl lg:text-3xl text-gray-700 dark:text-white tracking-widest ">
         <h2 className="font-medium">
           <span className="text-purple-600 font-bold mr-2 animate-bounce inline-block">{"<>"}</span>
           HI, I'M YEREMIA <br /> CHRIS SARAGI.

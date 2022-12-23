@@ -9,7 +9,7 @@ function Works() {
           <a
             href="#"
             key={pIndex}
-            className="border-2 bg-white border-gray-100 flex flex-col p-3 hover:-translate-y-3 transform duration-300 shadow-xl"
+            className="border-2 rounded-lg bg-white border-gray-100 flex flex-col p-3 hover:-translate-y-3 transform duration-300 shadow-xl"
           >
             <img
               src={`/img/works/${pElement.image}`}

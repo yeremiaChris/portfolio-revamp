@@ -1,7 +1,7 @@
 export const logos = [
   {
     name: "nuxt",
-    class: "opacity-10 lg:opacity-20 w-full",
+    class: "opacity-10 dark:rounded-full lg:opacity-20 w-full",
   },
   {
     name: "next",

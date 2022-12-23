@@ -3,7 +3,24 @@ import Home from "./pages";
 import { BrowserRouter } from "react-router-dom";
 import Layout from "./layouts/index";
 import Navbar from "./components/layouts/Navbar";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    let cleanUp = false;
+    if (!cleanUp) {
+      const html = document.documentElement;
+      const theme = localStorage.theme;
+      if (theme === "dark") {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+    }
+    return () => {
+      cleanUp = true;
+    };
+  }, []);
+
   return (
     <div className="App">
       <Layout>
@@ -16,7 +33,7 @@ function App() {
           </div>
         </BrowserRouter>
       </Layout>
-      <div className="background-gradient" />
+      <div className="background-gradient dark:hidden" />
     </div>
   );
 }

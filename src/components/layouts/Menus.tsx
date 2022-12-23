@@ -29,7 +29,7 @@ function Menus({ handleClick }: IMenus) {
             sElement === "home" && !location.hash
               ? "border-b-2 border-purple-500"
               : location.hash.includes(sElement) && "border-b-2 border-purple-500"
-          } hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full text-gray-600`}
+          } hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full dark:text-white text-gray-600`}
         >
           {sElement}
         </Link>

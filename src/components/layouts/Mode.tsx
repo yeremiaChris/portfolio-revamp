@@ -1,23 +1,45 @@
 import { useState } from "react";
 
+const modes = ["dark", "light"];
+
 function Mode() {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const handleClick = (mode: string) => {
+    const html = document.documentElement;
+    localStorage.theme = mode;
+
+    if (mode === "dark") {
+      html.classList.add(mode);
+    } else {
+      html.classList.remove("dark");
+    }
+
+    if (mode === "dark") {
+      setIsDark(true);
+    } else setIsDark(false);
+  };
+
   return (
     <div className="flex gap-3">
-      <button
-        className={`btn-primary hover:bg-purple-500 hover:text-white border border-purple-500 ${
-          isDark && "bg-purple-500 text-white "
-        }`}
-      >
-        DARK
-      </button>
-      <button
+      {modes?.map((sElement) => (
+        <button
+          key={sElement}
+          className={`uppercase btn-primary hover:bg-purple-500 hover:text-white dark:text-white border border-purple-500 ${
+            isDark && sElement === "dark" && "bg-purple-500 text-white"
+          } ${!isDark && sElement === "light" && "bg-purple-500 text-white"}`}
+          onClick={() => handleClick(sElement)}
+        >
+          {sElement}
+        </button>
+      ))}
+
+      {/* <button
         className={`btn-primary border hover:bg-purple-500 hover:text-white border-purple-500 ${
           !isDark && "bg-purple-500 text-white "
         }`}
       >
         LIGHT
-      </button>
+      </button> */}
     </div>
   );
 }
