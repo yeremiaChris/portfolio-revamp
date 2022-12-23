@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { boxes } from "../constants/about";
 function About() {
   return (
-    <div className="mt-10 lg:mt-20">
-      <h2 className="text-2xl font-medium text-green-500">aboutMe()</h2>
+    <section className="mt-10 lg:mt-20" id="about">
+      <h2 className="text-2xl font-medium text-green-500" id="about">
+        aboutMe()
+      </h2>
       <div className="mt-6 grid lg:grid-cols-2 gap-10">
         <p className="text-lg leading-9">
           I'm a Front-end web developer. I specialize in JavaScript, Typescript and have
@@ -32,7 +34,7 @@ function About() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

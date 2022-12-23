@@ -2,7 +2,7 @@ import React from "react";
 
 function Companies() {
   return (
-    <div className="mt-10 lg:mt-20">
+    <section className="mt-10 lg:mt-20" id="companies">
       <h2 className="text-2xl font-medium text-green-500 mb-10">companies()</h2>
       <div className="mt-6 grid lg:grid-cols-2 gap-10">
         <div className="flex gap-5 items-center">
@@ -46,7 +46,7 @@ function Companies() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

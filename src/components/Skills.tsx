@@ -1,7 +1,7 @@
 import { skillsStack } from "../constants/skills";
 function Skills() {
   return (
-    <div className="mt-10 lg:mt-20">
+    <section className="mt-10 lg:mt-20" id="skill">
       <h2 className="text-2xl font-medium text-green-500">skills()</h2>
 
       <div className="flex items-center justify-center lg:justify-start gap-20 flex-wrap mt-14">
@@ -11,7 +11,7 @@ function Skills() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

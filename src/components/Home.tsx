@@ -4,7 +4,7 @@ import { logos } from "../constants/home";
 
 function Home() {
   return (
-    <div className="grid lg:grid-cols-2 gap-10 uppercase mt-10 lg:mt-20">
+    <section className="grid lg:grid-cols-2 gap-10 uppercase mt-10 lg:mt-20" id="home">
       {/* img banner */}
       <div className="box-center relative">
         <img
@@ -57,7 +57,7 @@ function Home() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

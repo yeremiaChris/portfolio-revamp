@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 const menus = ["home", "about", "skill", "companies", "recentWorks"];
 
 function Navbar() {
   const [isScroll, setIsScroll] = useState<boolean>(false);
-
+  const history = useNavigate();
   const [isDark, setIsDark] = useState<boolean>(false);
+
+  const handleRoute = (id: string) => {
+    let link = document.getElementById(id);
+    link &&
+      window.scrollTo({
+        top: link.offsetTop - 110,
+        behavior: "smooth",
+      });
+  };
+
+  const location = useLocation();
 
   useEffect(() => {
     // handle onscroll
@@ -14,6 +24,25 @@ function Navbar() {
     let cleanUp = false;
     if (!cleanUp) {
       window.onscroll = (e) => {
+        const section = document.querySelectorAll("section");
+
+        section.forEach((sec) => {
+          let top = window.scrollY;
+          let offset = sec.offsetTop - 260;
+          let height = sec.offsetHeight;
+
+          let id = sec.getAttribute("id");
+          if (id) {
+            if (top >= offset && top < offset + height) {
+              console.log(id);
+
+              menus.map((item) => {
+                item === id && history("#" + id);
+              });
+            }
+          }
+        });
+
         if (window.scrollY > 0) {
           setIsScroll(true);
         } else {
@@ -39,8 +68,16 @@ function Navbar() {
         <div className="lg:flex gap-5 hidden text-sm uppercase font-medium">
           {menus?.map((sElement) => (
             <Link
-              to="#"
-              className="hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full text-gray-600"
+              to={"#" + sElement}
+              key={sElement}
+              onClick={(e) => {
+                handleRoute(sElement);
+              }}
+              className={`${
+                sElement === "home" && !location.hash
+                  ? "border-b-2 border-purple-500"
+                  : location.hash.includes(sElement) && "border-b-2 border-purple-500"
+              } hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full text-gray-600`}
             >
               {sElement}
             </Link>
