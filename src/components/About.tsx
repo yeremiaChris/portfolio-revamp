@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 import { boxes } from "../constants/about";
+const handleRoute = (id: string) => {
+  let link = document.getElementById(id);
+  link &&
+    window.scrollTo({
+      top: link.offsetTop - 110,
+      behavior: "smooth",
+    });
+};
+
 function About() {
   return (
     <section className="mt-10 lg:mt-20" id="about">
@@ -22,9 +31,23 @@ function About() {
             >
               <div className="flex flex-col gap-3 ">
                 <h2 className="text-2xl font-medium">{pElement.title}</h2>
-                <Link to={pElement.link} className="inline-block text-green-700 underline">
-                  {pElement.linkTitle}
-                </Link>
+                {pElement.hash ? (
+                  <Link
+                    to={pElement.link}
+                    onClick={() => handleRoute(pElement.hash)}
+                    className="inline-block text-green-700 underline"
+                  >
+                    {pElement.linkTitle}
+                  </Link>
+                ) : (
+                  <a
+                    href={pElement.link}
+                    target="_blank"
+                    className="inline-block text-green-700 underline"
+                  >
+                    {pElement.linkTitle}
+                  </a>
+                )}
               </div>
 
               <span className="text-green-500 font-bold text-xl">

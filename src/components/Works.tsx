@@ -7,8 +7,9 @@ function Works() {
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {works?.map((pElement, pIndex) => (
           <a
-            href="#"
+            href={pElement.link}
             key={pIndex}
+            target="_blank"
             className="border-2 rounded-lg bg-white border-gray-100 flex flex-col p-3 hover:-translate-y-3 transform duration-300 shadow-xl"
           >
             <img

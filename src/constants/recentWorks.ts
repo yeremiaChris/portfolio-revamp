@@ -17,26 +17,31 @@ export const works = [
   {
     title: "Dashbourd Purity (Slicing PURITY UI)",
     image: "purity.png",
-    link: "",
+    link: "https://slicing-ui-purity.netlify.app/",
   },
   {
     title: "Revamp Kiriminaja.com site",
     image: "kiriminaja.png",
+    link: "https://revamp-kiriminaja.netlify.app/",
   },
   {
     title: "Quizz App",
     image: "quizz.png",
+    link: "https://quizz-app-nextjs.netlify.app",
   },
-  {
-    title: "BPPT Dashboard Site",
-    image: "bppt.png",
-  },
+  // {
+  //   title: "BPPT Dashboard Site",
+  //   image: "bppt.png",
+  //   link: "#",
+  // },
   {
     title: "Cafe Sales Transaction Application",
     image: "cafe.jpeg",
+    link: "https://github.com/yeremiaChris/rumahMakan",
   },
   {
     title: "Pharmacy Information System",
     image: "apotek.png",
+    link: "https://github.com/yeremiaChris/sistem-informasi-apotek",
   },
 ];

@@ -12,7 +12,7 @@ function MobileNavbar({ isMobile, handleClick }: IMobileNavbar) {
     <div
       className={`${
         !isMobile && "-translate-y-[2000px]"
-      } duration-300 ease-in-out transform fixed flex flex-col inset-0 bg-white p-6`}
+      } duration-300 ease-in-out transform fixed flex flex-col inset-0 dark:bg-black bg-white p-6`}
     >
       <div className="font-bold mb-4 flex justify-between items-center">
         <div>
@@ -24,8 +24,7 @@ function MobileNavbar({ isMobile, handleClick }: IMobileNavbar) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 dark:stroke-white stroke-black"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
