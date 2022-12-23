@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const modes = ["dark", "light"];
 
 function Mode() {
   const [isDark, setIsDark] = useState<boolean>(false);
+
+  useEffect(() => {
+    let cleanUp = false;
+    if (!cleanUp) {
+      const theme = localStorage.theme;
+      if (theme === "dark") {
+        setIsDark(true);
+      } else {
+        setIsDark(false);
+      }
+    }
+
+    return () => {
+      cleanUp = true;
+    };
+  }, []);
+
   const handleClick = (mode: string) => {
     const html = document.documentElement;
     localStorage.theme = mode;
