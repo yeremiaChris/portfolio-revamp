@@ -1,22 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-const menus = ["home", "about", "skill", "companies", "recentWorks"];
-
+import Mode from "./Mode";
+import { menus } from "../../constants/navbar";
+import Menus from "./Menus";
 function Navbar() {
   const [isScroll, setIsScroll] = useState<boolean>(false);
   const history = useNavigate();
-  const [isDark, setIsDark] = useState<boolean>(false);
-
-  const handleRoute = (id: string) => {
-    let link = document.getElementById(id);
-    link &&
-      window.scrollTo({
-        top: link.offsetTop - 110,
-        behavior: "smooth",
-      });
-  };
-
-  const location = useLocation();
 
   useEffect(() => {
     // handle onscroll
@@ -24,6 +13,8 @@ function Navbar() {
     let cleanUp = false;
     if (!cleanUp) {
       window.onscroll = (e) => {
+        // active navbar base on id of sectioin
+
         const section = document.querySelectorAll("section");
 
         section.forEach((sec) => {
@@ -41,6 +32,9 @@ function Navbar() {
           }
         });
 
+        // last handle active navbar
+
+        // handle user scroll
         if (window.scrollY > 0) {
           setIsScroll(true);
         } else {
@@ -63,42 +57,11 @@ function Navbar() {
           YERE<span className="text-yellow-500">MIA</span>
         </div>
 
-        <div className="lg:flex gap-5 hidden text-sm uppercase font-medium">
-          {menus?.map((sElement) => (
-            <Link
-              to={"#" + sElement}
-              key={sElement}
-              onClick={(e) => {
-                handleRoute(sElement);
-              }}
-              className={`${
-                sElement === "home" && !location.hash
-                  ? "border-b-2 border-purple-500"
-                  : location.hash.includes(sElement) && "border-b-2 border-purple-500"
-              } hover:border-b-2 hover:border-purple-500 inline-block px-4 py-2 rounded-full text-gray-600`}
-            >
-              {sElement}
-            </Link>
-          ))}
-        </div>
+        <Menus />
 
-        <div className="hidden lg:flex gap-3">
-          <button
-            className={`btn-primary hover:bg-purple-500 hover:text-white border border-purple-500 ${
-              isDark && "bg-purple-500 text-white "
-            }`}
-          >
-            DARK
-          </button>
-          <button
-            className={`btn-primary border hover:bg-purple-500 hover:text-white border-purple-500 ${
-              !isDark && "bg-purple-500 text-white "
-            }`}
-          >
-            LIGHT
-          </button>
-        </div>
+        <Mode />
 
+        {/* burger */}
         <button className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -40,7 +40,7 @@ function Home() {
         </h2>
 
         {/* social media */}
-        <div className="flex gap-3 text-sm mt-5 lg:mt-10">
+        <div className="flex flex-wrap gap-3 text-sm mt-5 lg:mt-10">
           <a
             href="https://github.com/yeremiaChris/"
             target="_blank"
