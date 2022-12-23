@@ -3,8 +3,11 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import Mode from "./Mode";
 import { menus } from "../../constants/navbar";
 import Menus from "./Menus";
+import MobileNavbar from "./MobileNavbar";
 function Navbar() {
   const [isScroll, setIsScroll] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const history = useNavigate();
 
   useEffect(() => {
@@ -52,17 +55,25 @@ function Navbar() {
     <nav
       className={`sticky top-0 z-50 duration-300 text-gray-500 ${isScroll && "bg-white shadow"}`}
     >
+      {/* mobile */}
+      <MobileNavbar isMobile={isMobile} handleClick={() => setIsMobile(false)} />
+
+      {/* desktop */}
       <div className="container box-between py-5">
         <div className="font-bold">
           YERE<span className="text-yellow-500">MIA</span>
         </div>
 
-        <Menus />
+        <div className="lg:block hidden">
+          <Menus />
+        </div>
 
-        <Mode />
+        <div className="hidden lg:block">
+          <Mode />
+        </div>
 
         {/* burger */}
-        <button className="lg:hidden">
+        <button className="lg:hidden" onClick={() => setIsMobile(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

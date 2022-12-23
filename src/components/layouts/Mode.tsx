@@ -3,7 +3,7 @@ import { useState } from "react";
 function Mode() {
   const [isDark, setIsDark] = useState<boolean>(false);
   return (
-    <div className="hidden lg:flex gap-3">
+    <div className="flex gap-3">
       <button
         className={`btn-primary hover:bg-purple-500 hover:text-white border border-purple-500 ${
           isDark && "bg-purple-500 text-white "

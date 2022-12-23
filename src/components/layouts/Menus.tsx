@@ -12,7 +12,7 @@ function Menus() {
 
   const location = useLocation();
   return (
-    <div className="lg:flex gap-5 hidden text-sm uppercase font-medium">
+    <div className="grid lg:flex gap-5 text-sm uppercase font-medium">
       {menus?.map((sElement) => (
         <Link
           to={"#" + sElement}
