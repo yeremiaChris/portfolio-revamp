@@ -34,8 +34,6 @@ function Navbar() {
           let id = sec.getAttribute("id");
           if (id) {
             if (top >= offset && top < offset + height) {
-              console.log(id);
-
               menus.map((item) => {
                 item === id && history("#" + id);
               });
