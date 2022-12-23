@@ -1,7 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { menus } from "../../constants/navbar";
-function Menus() {
+
+type IMenus = {
+  handleClick?: () => void;
+};
+function Menus({ handleClick }: IMenus) {
   const handleRoute = (id: string) => {
+    handleClick?.();
     let link = document.getElementById(id);
     link &&
       window.scrollTo({

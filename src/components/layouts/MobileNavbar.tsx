@@ -33,7 +33,7 @@ function MobileNavbar({ isMobile, handleClick }: IMobileNavbar) {
       </div>
 
       <div className="mb-5">
-        <Menus />
+        <Menus handleClick={() => handleClick()} />
       </div>
 
       <Mode />
