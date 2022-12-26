@@ -49,7 +49,7 @@ function Navbar() {
     return () => {
       cleanUp = false;
     };
-  }, [isScroll]);
+  }, []);
 
   return (
     <nav
