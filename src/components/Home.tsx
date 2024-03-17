@@ -4,17 +4,20 @@ import { logos } from "../constants/home";
 
 function Home() {
   return (
-    <section className="grid lg:grid-cols-2 gap-10 uppercase mt-10 lg:mt-20" id="home">
+    <section
+      className="grid lg:grid-cols-2 gap-10 uppercase mt-10 lg:mt-20"
+      id="home"
+    >
       {/* img banner */}
       <div className="box-center relative">
         <img
-          className="img-shadow w-3/4 z-10 drop-shadow-lg"
-          src="/img/my-picture.png"
+          className="z-10 drop-shadow-lg"
+          src="/img/profile-3.png"
           alt="banner"
         />
 
         {/* skill's logos */}
-        {logos?.map((pElement) => (
+        {/* {logos?.map((pElement) => (
           <div key={pElement.name} className={`absolute dark:bg-purple-100 ${pElement.class}`}>
             <img
               src={`/img/${pElement.name}.png`}
@@ -22,13 +25,15 @@ function Home() {
               alt={pElement.name}
             />
           </div>
-        ))}
+        ))} */}
       </div>
 
       {/* content */}
-      <div className="lg:pt-32 text-xl lg:text-3xl text-gray-700 dark:text-white tracking-widest ">
+      <div className="md:pt-32 text-xl lg:text-3xl text-gray-700 dark:text-white tracking-widest ">
         <h2 className="font-medium">
-          <span className="text-purple-600 font-bold mr-2 animate-bounce inline-block">{"<>"}</span>
+          <span className="text-purple-600 font-bold mr-2 animate-bounce inline-block">
+            {"<>"}
+          </span>
           HI, I'M YEREMIA <br /> CHRIS SARAGI.
         </h2>
         <h2 className="mt-5">

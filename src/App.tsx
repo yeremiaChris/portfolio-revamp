@@ -33,7 +33,7 @@ function App() {
           </div>
         </BrowserRouter>
       </Layout>
-      <div className="background-gradient dark:hidden" />
+      <div className="dark:hidden" />
     </div>
   );
 }
