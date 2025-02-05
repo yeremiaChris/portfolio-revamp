@@ -1,10 +1,11 @@
+import { AlignVerticalJustifyEnd } from "lucide-react";
 import Link from "next/link";
 
 export const Header = () => {
   return (
     <header
       role="banner"
-      className="max-w-5xl py-8 text-white mx-auto flex justify-between"
+      className="max-w-5xl py-5 md:py-8 px-5 text-white mx-auto flex  items-center justify-between"
     >
       <p
         aria-label="Logo"
@@ -12,8 +13,9 @@ export const Header = () => {
       >
         Y
       </p>
+
       <nav role="navigation" aria-label="Main navigation">
-        <ul className="flex text-sm gap-10 text-neutral-400 font-semibold">
+        <ul className="hidden md:flex text-sm gap-10 text-neutral-400 font-semibold">
           <li>
             <Link
               href="/"
@@ -51,6 +53,8 @@ export const Header = () => {
             </Link>
           </li>
         </ul>
+
+        <AlignVerticalJustifyEnd className="text-neutral-500 md:hidden cursor-pointer" />
       </nav>
     </header>
   );

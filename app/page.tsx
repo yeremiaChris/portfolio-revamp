@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Header } from "./components/Header";
 import { Contact, FileUser, Github, Linkedin, Mail } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 
 export const metadata = {
   title: "Yeremia Chris Saragi | Frontend Web Developer",
@@ -34,45 +40,97 @@ export default function Home() {
       <Header />
 
       <main role="main" className="max-w-5xl mx-auto text-white">
-        <section id="banner" aria-label="Introduction" className="px-12 mt-5">
-          <p className="text-green-400">Hi, my name is</p>
+        <section
+          id="banner"
+          aria-label="Introduction"
+          className="px-5 md:px-12 md:mt-5"
+        >
+          <p className="text-green-400 tracking-widest">Hi, my name is</p>
 
-          <div className="px-3 mt-5 space-y-5">
-            <h1 className="scroll-m-20 text-neutral-200 text-6xl font-extrabold tracking-tight lg:text-7xl">
+          <div className="md:px-3 mt-5 space-y-5">
+            <h1 className="scroll-m-20 text-neutral-200 text-5xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
               Yeremia Chris <span className="bg-orange-500">Saragi</span>
             </h1>
-            <h2 className="scroll-m-20 text-5xl text-neutral-500 font-extrabold tracking-tight lg:text-6xl">
+            <h2 className="scroll-m-20 text-4xl md:text-5xl text-neutral-500 font-extrabold tracking-tight lg:text-6xl">
               Frontend Web Developer
             </h2>
-            <p className="mt-5 text-neutral-500">
+            <p className="mt-5 text-neutral-500 text-sm md:text-base">
               Passionate Front-End Developer with 3+ years of expertise in
-              JavaScript/TypeScript, specializing <br /> in Next.js & Nuxt.js.
+              JavaScript/TypeScript, specializing
+              <br className="hidden md:inline" /> in Next.js & Nuxt.js.
               Committed to crafting exceptional digital experiences and driven
-              to deliver <br /> impactful solutions as part of your team.
+              to deliver <br className="hidden md:inline" /> impactful solutions
+              as part of your team.
             </p>
 
-            <Button className="p-6 mr-3 rounded-lg">
-              Get In Touch <Contact className="text-neutral-500" />
-            </Button>
-            <Button className="p-6 rounded-lg">More About Me</Button>
+            <div className="flex gap-2 items-center">
+              <Button className="md:p-6 rounded-lg">
+                Get In Touch <Contact className="text-neutral-500" />
+              </Button>
+              <Button className="md:p-6 rounded-lg">More About Me</Button>
+            </div>
 
             <div className="flex gap-5 items-center text-neutral-600">
-              <Github
-                className="hover:text-green-400 cursor-pointer duration-300"
-                size={18}
-              />
-              <Linkedin
-                className="hover:text-green-400 cursor-pointer duration-300"
-                size={18}
-              />
-              <Mail
-                className="hover:text-green-400 cursor-pointer duration-300"
-                size={18}
-              />
-              <FileUser
-                className="hover:text-green-400 cursor-pointer duration-300"
-                size={18}
-              />
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Github
+                      className="hover:text-green-400 cursor-pointer duration-300"
+                      size={18}
+                    />
+                    <TooltipContent>
+                      <p className="border border-neutral-700 rounded-full mb-2 px-1.5">
+                        Github
+                      </p>
+                    </TooltipContent>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Linkedin
+                      className="hover:text-green-400 cursor-pointer duration-300"
+                      size={18}
+                    />
+                    <TooltipContent>
+                      <p className="border border-neutral-700 rounded-full mb-2 px-1.5">
+                        LinkedIn
+                      </p>
+                    </TooltipContent>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Mail
+                      className="hover:text-green-400 cursor-pointer duration-300"
+                      size={18}
+                    />
+                    <TooltipContent>
+                      <p className="border border-neutral-700 rounded-full mb-2 px-1.5">
+                        Email
+                      </p>
+                    </TooltipContent>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <FileUser
+                      className="hover:text-green-400 cursor-pointer duration-300"
+                      size={18}
+                    />
+                    <TooltipContent>
+                      <p className="border border-neutral-700 rounded-full mb-2 px-1.5">
+                        CV
+                      </p>
+                    </TooltipContent>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           </div>
         </section>
