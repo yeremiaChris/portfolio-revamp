@@ -39,7 +39,7 @@ export default function Home() {
 
           <div className="px-3 mt-5 space-y-5">
             <h1 className="scroll-m-20 text-neutral-200 text-6xl font-extrabold tracking-tight lg:text-7xl">
-              Yeremia Chris Saragi
+              Yeremia Chris <span className="bg-orange-500">Saragi</span>
             </h1>
             <h2 className="scroll-m-20 text-5xl text-neutral-500 font-extrabold tracking-tight lg:text-6xl">
               Frontend Web Developer
