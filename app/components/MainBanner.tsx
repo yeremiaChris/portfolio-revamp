@@ -13,7 +13,7 @@ export const MainBanner = () => {
     <section
       id="banner"
       aria-label="Introduction"
-      className="max-w-5xl self-center  mx-auto text-white"
+      className="max-w-5xl w-full mx-auto text-white"
     >
       <div className="px-5 md:mt-5">
         <motion.p
