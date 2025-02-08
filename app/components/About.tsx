@@ -74,7 +74,7 @@ export const About = () => {
     <motion.section
       {...defaultMotionProps}
       id="about"
-      className="max-w-5xl self-center space-y-5 pb-10 px-5 mx-auto text-white"
+      className="max-w-5xl mb-20 self-center space-y-5 px-5 mx-auto text-white"
     >
       <motion.div
         {...defaultMotionProps}
