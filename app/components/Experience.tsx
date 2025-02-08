@@ -29,13 +29,13 @@ const ExperienceItem = ({
   description,
   responsibilities,
 }: ExperienceItemProps) => (
-  <div className="grid md:grid-cols-4 gap-5 md:gap-10">
+  <div className="flex flex-col md:grid md:grid-cols-4 gap-5 md:gap-10">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="col-span-1"
+      className="md:col-span-1"
     >
       <h2 className="text-neutral-500 uppercase text-sm font-medium">{date}</h2>
     </motion.div>
@@ -47,7 +47,7 @@ const ExperienceItem = ({
       className="col-span-3"
     >
       <h2 className="text-lg font-bold">{title}</h2>
-      <div className="flex gap-1 items-center text-neutral-500">
+      <div className="flex gap-1 items-start text-neutral-500">
         <Link
           href={company.url}
           target="_blank"
