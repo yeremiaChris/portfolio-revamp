@@ -79,7 +79,7 @@ export const About = () => {
       <motion.div
         {...defaultMotionProps}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mb-20 space-y-2"
+        className="mb-8 space-y-2"
       >
         <h2 className="md:text-5xl text-3xl text-center font-bold">
           About <span className="text-green-400">Me</span>
@@ -96,7 +96,7 @@ export const About = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="mb-4"
       >
-        <h2 className="text-2xl font-bold">Yeremia Chris Saragi</h2>
+        <h2 className="text-xl font-bold">Yeremia Chris Saragi</h2>
         <p className="text-neutral-400 text-sm bg-gradient-to-r from-neutral-400 via-green-400 to-neutral-400 text-transparent bg-clip-text bg-300% animate-shine">
           Frontend Web Developer at PrimaKu
         </p>

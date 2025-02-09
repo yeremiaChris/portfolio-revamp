@@ -47,13 +47,13 @@ export const MainBanner = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="scroll-m-20 text-neutral-200 text-4xl md:text-5xl font-extrabold tracking-tight lg:text-6xl"
             >
-              Yeremia Chris <span className="bg-orange-500">Saragi</span>
+              Yeremia Chris Saragi
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="scroll-m-20 text-3xl md:text-4xl bg-gradient-to-r from-neutral-700 via-neutral-500 to-neutral-700 text-transparent bg-clip-text bg-300% animate-shine font-extrabold tracking-tight lg:text-5xl"
+              className="scroll-m-20 text-2xl md:text-4xl bg-gradient-to-r from-neutral-700 via-neutral-500 to-neutral-700 text-transparent bg-clip-text bg-300% animate-shine font-extrabold tracking-tight lg:text-5xl"
             >
               Software Engineer
             </motion.h2>

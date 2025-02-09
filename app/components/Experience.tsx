@@ -147,14 +147,14 @@ export const Experience = () => {
       <motion.div
         {...defaultMotionProps}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mb-20 space-y-2"
+        className="mb-8  space-y-2"
       >
         <h2 className="md:text-5xl text-3xl font-bold">
           Experi<span className="text-green-400">ence</span>
         </h2>
 
         <p className="text-sm bg-gradient-to-r from-neutral-700 via-neutral-500 to-neutral-700 text-transparent bg-clip-text bg-300% animate-shine font-medium">
-          Showcasing my professional journey and achievements
+          Showcasing my professional journey
         </p>
       </motion.div>
 

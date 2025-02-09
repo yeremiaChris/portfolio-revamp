@@ -62,7 +62,7 @@ const ProjectItem = ({
           <motion.div {...contentAnimationProps} className="space-y-5">
             <h2 className="text-2xl font-bold">{title}</h2>
             <p className="text-sm text-neutral-400">{description}</p>
-            <p className="text-neutral-400 text-sm">Tool: {tools}</p>
+            <p className="text-neutral-400 text-sm">Tools: {tools}</p>
             <Button asChild>
               <Link href={link} target="_blank">
                 View Project <ExternalLink />
@@ -158,14 +158,14 @@ export const Projects = () => {
       <motion.div
         {...defaultMotionProps}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mb-20 space-y-2"
+        className="mb-8 space-y-2"
       >
         <h2 className="md:text-5xl text-3xl font-bold">
           Proje<span className="text-green-400">cts</span>
         </h2>
 
         <p className="text-sm bg-gradient-to-r from-neutral-700 via-neutral-500 to-neutral-700 text-transparent bg-clip-text bg-300% animate-shine font-medium">
-          Showcasing my professional journey and achievements
+          Showcasing my featured projects and work
         </p>
       </motion.div>
 
