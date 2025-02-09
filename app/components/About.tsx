@@ -74,7 +74,7 @@ export const About = () => {
     <motion.section
       {...defaultMotionProps}
       id="about"
-      className="max-w-5xl mb-20 self-center space-y-5 px-5 mx-auto text-white"
+      className="max-w-5xl mb-20 mt-20 self-center space-y-5 px-5 mx-auto text-white scroll-mt-28"
     >
       <motion.div
         {...defaultMotionProps}
@@ -122,7 +122,7 @@ export const About = () => {
         building web applications and continuously learning new technologies.
         <br />
         <br />
-        As a full-stack engineer, here are my current favorite tech stack:
+        As a software engineer, here are my current favorite tech stack:
       </motion.p>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">

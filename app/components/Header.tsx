@@ -2,15 +2,90 @@
 import { AlignVerticalJustifyEnd } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import React from "react";
 
 const menuItems = [
   { href: "/", label: "Home", isActive: true },
+  { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  // { href: "#contact", label: "Contact" },
 ];
 
+const VIEWPORT_OFFSET = 100;
+
+const updateURL = (hash: string) => {
+  window.history.replaceState({}, "", hash);
+};
+
+const isElementInViewport = (element: HTMLElement) => {
+  const rect = element.getBoundingClientRect();
+  return rect.top <= VIEWPORT_OFFSET && rect.bottom >= VIEWPORT_OFFSET;
+};
+
 export const Header = () => {
+  const [activeHash, setActiveHash] = React.useState<string>("/");
+
+  React.useEffect(() => {
+    const updateActiveHash = (hash: string) => {
+      if (activeHash !== hash) {
+        setActiveHash(hash);
+        updateURL(hash);
+      }
+    };
+
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash || "/");
+    };
+
+    const handleScroll = () => {
+      const sections = menuItems
+        .map((item) => item.href)
+        .filter((href) => href.startsWith("#"))
+        .map((href) => document.getElementById(href.slice(1)))
+        .filter((element): element is HTMLElement => element !== null);
+
+      const currentSection = sections.find(isElementInViewport);
+
+      if (currentSection) {
+        updateActiveHash(`#${currentSection.id}`);
+      } else if (window.scrollY === 0) {
+        updateActiveHash("/");
+      }
+    };
+
+    // Initial setup
+    setActiveHash(window.location.hash || "/");
+    handleScroll();
+
+    // Event listeners
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeHash]);
+
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+
+    if (href.startsWith("#")) {
+      const element = document.getElementById(href.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState({}, "", href);
+        setActiveHash(href);
+      }
+    } else {
+      window.location.href = href;
+    }
+  };
+
   return (
     <div className="fixed z-50 top-0 right-0 left-0 backdrop-blur-sm">
       <header
@@ -37,8 +112,9 @@ export const Header = () => {
               <li key={item.label}>
                 <Link
                   href={item.href}
+                  onClick={(e) => handleScroll(e, item.href)}
                   className={`${
-                    item.isActive ? "text-green-400" : ""
+                    activeHash === item.href ? "text-green-400" : ""
                   } hover:text-green-300 duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-300 after:transition-all after:duration-300 hover:after:w-full`}
                   aria-label={`Go to ${item.label} section`}
                 >

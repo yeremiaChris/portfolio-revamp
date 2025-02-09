@@ -140,7 +140,10 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="projects" className="text-white max-w-5xl mx-auto px-5 pb-10">
+    <section
+      id="experience"
+      className="text-white max-w-5xl mx-auto px-5 pb-10 scroll-mt-24"
+    >
       <motion.div
         {...defaultMotionProps}
         transition={{ duration: 0.8, delay: 0.2 }}
