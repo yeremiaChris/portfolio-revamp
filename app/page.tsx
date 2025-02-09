@@ -4,6 +4,7 @@ import { MainBanner } from "./components/MainBanner";
 import { EmailSeparator } from "./components/EmailSeparator";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
 
 export const metadata = {
   title: "Yeremia Chris Saragi | Frontend Web Developer",
@@ -45,6 +46,8 @@ export default function Home() {
       <About />
 
       <Experience />
+
+      <Projects />
     </>
   );
 }

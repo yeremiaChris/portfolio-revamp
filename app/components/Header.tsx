@@ -12,7 +12,7 @@ const menuItems = [
 
 export const Header = () => {
   return (
-    <div className="fixed top-0 right-0 left-0 backdrop-blur-sm">
+    <div className="fixed z-50 top-0 right-0 left-0 backdrop-blur-sm">
       <header
         role="banner"
         className="max-w-5xl w-full py-5 md:py-8 px-5 text-white mx-auto flex  items-center justify-between"
