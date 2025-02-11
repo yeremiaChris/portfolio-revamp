@@ -5,6 +5,8 @@ import { EmailSeparator } from "./components/EmailSeparator";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
+import { Shape } from "./components/icon/Shape";
+import { Star } from "./components/icon/Star";
 
 export const metadata = {
   title: "Yeremia Chris Saragi | Frontend Web Developer",
@@ -35,9 +37,12 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <div className="h-screen flex flex-col justify-center">
+      <div className="h-screen flex flex-col justify-center relative">
+        <div className="absolute text-neutral-900 bottom-0 right-0">
+          <Shape />
+        </div>
+        <Star />
         <Header />
-
         <MainBanner />
       </div>
 

@@ -18,6 +18,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Logo } from "./icon/Logo";
 
 const menuItems = [
   { href: "/", label: "Home", isActive: true },
@@ -116,12 +117,12 @@ export const Header = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="fixed z-50 top-0 right-0 left-0 backdrop-blur-sm">
+    <div className="fixed z-50 top-0 right-0 left-0 bg-neutral-950">
       <header
         role="banner"
-        className="max-w-5xl w-full py-5 md:py-8 px-5 text-white mx-auto flex  items-center justify-between"
+        className="max-w-5xl w-full py-5 md:py-3 px-5 text-white mx-auto flex  items-center justify-between"
       >
-        <motion.p
+        <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
@@ -131,10 +132,10 @@ export const Header = () => {
           }}
           aria-label="Logo"
           onClick={() => handleScrollMobile("/")}
-          className="bg-neutral-700 font-bold cursor-pointer text-2xl w-8 h-8 flex items-center justify-center rounded-full text-center hover:bg-neutral-600 hover:scale-110 transition-all duration-300 select-none"
+          className="bg-neutral-700 p-1 font-bold cursor-pointer text-2xl w-8 h-8 flex items-center justify-center rounded-full text-center hover:bg-neutral-600 hover:scale-110 transition-all duration-300 select-none"
         >
-          Y
-        </motion.p>
+          <Logo />
+        </motion.div>
 
         <nav role="navigation" aria-label="Main navigation">
           <ul className="hidden md:flex text-sm gap-10 text-neutral-400 font-semibold">

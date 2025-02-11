@@ -53,7 +53,7 @@ const ProjectItem = ({
         {...imageAnimationProps}
         className="relative rounded-lg border border-neutral-900 border-dashed overflow-hidden w-full h-72 md:hidden"
       >
-        <Image src={imageSrc} alt={imageAlt} fill className="object-contain" />
+        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
       </motion.div>
 
       {/* Desktop Layout - Conditionally order content and image */}
@@ -71,6 +71,9 @@ const ProjectItem = ({
           </motion.div>
           <motion.div
             {...imageAnimationProps}
+            style={{
+              aspectRatio: "2.8 / 1",
+            }}
             className="hidden md:block relative rounded-lg overflow-hidden w-full h-full group border border-neutral-900 hover:border-green-400/50 transition-colors duration-300"
           >
             <Image
@@ -85,6 +88,9 @@ const ProjectItem = ({
         <>
           <motion.div
             {...imageAnimationProps}
+            style={{
+              aspectRatio: "2.8 / 1",
+            }}
             className="hidden md:block relative rounded-lg overflow-hidden w-full h-full group border border-neutral-900 hover:border-green-400/50 transition-colors duration-300"
           >
             <Image
