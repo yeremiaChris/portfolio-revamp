@@ -1,8 +1,23 @@
 "use client";
-import { AlignVerticalJustifyEnd } from "lucide-react";
+import {
+  AlignHorizontalDistributeCenter,
+  AlignVerticalJustifyEnd,
+  ChartAreaIcon,
+  Home,
+  Projector,
+} from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const menuItems = [
   { href: "/", label: "Home", isActive: true },
@@ -85,6 +100,20 @@ export const Header = () => {
       window.location.href = href;
     }
   };
+  const handleScrollMobile = (href: string) => {
+    if (href.startsWith("#")) {
+      const element = document.getElementById(href.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState({}, "", href);
+        setActiveHash(href);
+      }
+    } else {
+      window.location.href = href;
+    }
+  };
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div className="fixed z-50 top-0 right-0 left-0 backdrop-blur-sm">
@@ -101,7 +130,8 @@ export const Header = () => {
             damping: 20,
           }}
           aria-label="Logo"
-          className="bg-neutral-700 font-bold text-2xl w-8 h-8 flex items-center justify-center rounded-full text-center hover:bg-neutral-600 hover:scale-110 transition-all duration-300"
+          onClick={() => handleScrollMobile("/")}
+          className="bg-neutral-700 font-bold cursor-pointer text-2xl w-8 h-8 flex items-center justify-center rounded-full text-center hover:bg-neutral-600 hover:scale-110 transition-all duration-300 select-none"
         >
           Y
         </motion.p>
@@ -124,7 +154,39 @@ export const Header = () => {
             ))}
           </ul>
 
-          <AlignVerticalJustifyEnd className="text-neutral-500 md:hidden cursor-pointer" />
+          <DropdownMenu open={open} onOpenChange={setOpen}>
+            <DropdownMenuTrigger asChild>
+              <AlignVerticalJustifyEnd className="text-neutral-500 md:hidden cursor-pointer" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="!right-0 !left-0" align="end">
+              <DropdownMenuLabel className="w-full">Actions</DropdownMenuLabel>
+              <DropdownMenuGroup className="w-full">
+                <DropdownMenuItem
+                  onClick={() => handleScrollMobile("/")}
+                  className="w-full"
+                >
+                  <Home />
+                  Home
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleScrollMobile("#about")}>
+                  <AlignHorizontalDistributeCenter />
+                  About
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => handleScrollMobile("#experience")}
+                >
+                  <ChartAreaIcon />
+                  Experiences
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => handleScrollMobile("#projects")}
+                >
+                  <Projector />
+                  Projects
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
       </header>
     </div>
