@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 export const Star = () => {
   return (
     <motion.div
-      className="absolute bottom-5 right-14"
+      className="absolute bottom-5 right-5 hidden md:block md:right-14"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
